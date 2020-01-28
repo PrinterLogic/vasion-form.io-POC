@@ -2,7 +2,7 @@
   <div id="app">
     <formio src="https://pkvmbfepdkcudwv.form.io/testform" v-on:submit="onSubmitMethod" />
     <hr />
-    <formbuilder v-bind:form="{display: 'form'}" v-bind:options="{}" v-on:change="onBuilderChange(schema)"></formbuilder>
+    <formbuilder v-bind:form="{display: 'form'}" v-bind:options="{}" v-on:change="(schema) => console.log(schema)"></formbuilder>
   </div>
 </template>
 
@@ -15,34 +15,6 @@ export default {
   components: {
     formio: Form,
     formbuilder: FormBuilder
-  },
-  data() {
-    return {
-      schema: {
-        components: [
-          {
-            type: 'textfield',
-            key: 'firstName',
-            label: 'First Name',
-            placeholder: 'Enter your first name.',
-            input: true
-          },
-          {
-            type: 'textfield',
-            key: 'lastName',
-            label: 'Last Name',
-            placeholder: 'Enter your last name',
-            input: true
-          },
-          {
-            type: 'button',
-            action: 'submit',
-            label: 'Submit',
-            theme: 'primary'
-          }
-        ]
-      },
-    }
   },
   methods: {
     onSubmitMethod: function(submission) {

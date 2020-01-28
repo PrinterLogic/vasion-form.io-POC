@@ -41,7 +41,7 @@ export default {
             theme: 'primary'
           }
         ]
-      },
+},
     }
   },
   methods: {

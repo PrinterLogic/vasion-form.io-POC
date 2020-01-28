@@ -16,34 +16,9 @@ export default {
     formio: Form,
     formbuilder: FormBuilder
   },
-  data() {
-    return {
-      schema: {
-        components: [
-          {
-            type: 'textfield',
-            key: 'firstName',
-            label: 'First Name',
-            placeholder: 'Enter your first name.',
-            input: true
-          },
-          {
-            type: 'textfield',
-            key: 'lastName',
-            label: 'Last Name',
-            placeholder: 'Enter your last name',
-            input: true
-          },
-          {
-            type: 'button',
-            action: 'submit',
-            label: 'Submit',
-            theme: 'primary'
-          }
-        ]
-      },
-    }
-  },
+  data: {
+    
+  }
   methods: {
     onSubmitMethod: function(submission) {
       // eslint-disable-next-line

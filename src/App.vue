@@ -1,19 +1,16 @@
 <template>
   <div id="app">
-    <formio src="https://pkvmbfepdkcudwv.form.io/testform" v-on:submit="onSubmitMethod" />
-    <hr />
     <div class="formio-header">
       <div class="md-layout-item vasion-page-title left-padding margin-bottom">
       </div>
       <div class="col-xs-8 col-sm-9 col-md-10 formarea">
-          <div class="formio-extension" v-if="showForm">
+          <div class="formio-extension">
             <input
               class='form-name'
               inputType='top-white'
               name='form-name'
               id='form-name'
               placeholder='Untitled Form'
-              v-model='saveEFormsPayload.Name'
             />
             <input
               class='form-description'
@@ -21,13 +18,9 @@
               name='form-description'
               id='form-description'
               placeholder='Form Description'
-              v-model='saveEFormsPayload.Description'
             />
           </div>
           <div class="md-layout-item vasion-flex-end">
-            <VasionButton :isDisabled="isLoading" id="eform-back" class="eformButtonsNoAddition" :classProp="'secondary'" v-if="showBack" @vasionButtonClicked="calculateBackLocation()">Back</VasionButton>
-            <VasionButton :isDisabled="isLoading" id="eform-next" class="eform-buttons" :class='{eformButtonsNoAddition: showBack}' :classProp="'primary'" v-if="showNext" @vasionButtonClicked="calculateNextLocation()">Next</VasionButton>
-            <VasionButton :isDisabled="isLoading" id="eform-save" class="eformButtonsNoAddition" :classProp="'primary'" v-if="showSave" @vasionButtonClicked="save()">Save</VasionButton>
           </div>
       </div>
     </div>
